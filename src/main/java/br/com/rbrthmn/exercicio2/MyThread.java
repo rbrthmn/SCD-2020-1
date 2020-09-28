@@ -2,21 +2,26 @@ package main.java.br.com.rbrthmn.exercicio2;
 
 public class MyThread extends Thread{
     private final int x;
-    private final int index;
     private final int[] array;
+    private final int startIndex;
+    private final int finalIndex;
 
-    public MyThread(int x, int index, int[] array) {
+    public MyThread(int x, int[] array, int startIndex, int finalIndex) {
         this.x = x;
-        this.index = index;
         this.array = array;
+        this.startIndex = startIndex;
+        this.finalIndex = finalIndex;
     }
 
     @Override
     public void run() {
-        for (int i = index; i < array.length; i++) {
+        System.out.println("index inicial " + startIndex);
+        System.out.println("index final " + finalIndex);
+        for (int i = startIndex; i < finalIndex; i++) {
             if (array[i] == x) {
-                notify();
+                System.out.println("Valor encontrado no índice " + i);
             }
         }
+//        System.out.println("Valor não encontrado");
     }
 }
