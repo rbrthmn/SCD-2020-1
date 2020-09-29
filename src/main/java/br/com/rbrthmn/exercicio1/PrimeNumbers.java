@@ -5,7 +5,9 @@ import java.lang.*;
 
 public class PrimeNumbers extends Thread {
     public static void main(String[] args) {
-        /** Comentar método restante aquele que deseja executar
+        /**
+         *
+         * Comentar método restante aquele que deseja executar
          **/
         exercicioA();
         exercicioB();

@@ -5,6 +5,7 @@ public class MyThread extends Thread{
     private final int[] array;
     private final int startIndex;
     private final int finalIndex;
+    private static int returnedIndex = -1;
 
     public MyThread(int x, int[] array, int startIndex, int finalIndex) {
         this.x = x;
@@ -13,15 +14,16 @@ public class MyThread extends Thread{
         this.finalIndex = finalIndex;
     }
 
+    public static int getReturnedIndex() {
+        return returnedIndex;
+    }
+
     @Override
     public void run() {
-        System.out.println("index inicial " + startIndex);
-        System.out.println("index final " + finalIndex);
-        for (int i = startIndex; i < finalIndex; i++) {
+        for (int i = startIndex; i <= finalIndex; i++) {
             if (array[i] == x) {
-                System.out.println("Valor encontrado no índice " + i);
+                returnedIndex = i;
             }
         }
-//        System.out.println("Valor não encontrado");
     }
 }
