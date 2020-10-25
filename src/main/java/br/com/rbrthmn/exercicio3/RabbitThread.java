@@ -4,6 +4,11 @@ package main.java.br.com.rbrthmn.exercicio3;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 public class RabbitThread extends Thread {
@@ -20,7 +25,7 @@ public class RabbitThread extends Thread {
         int distancia = (int) ((Math.random() * 3) + 1);
         count++;
         runned+= distancia;
-        System.out.println("Coelho " + index + " saltou " + distancia + " metros.");
+        System.out.println("Coelho " + index + " saltou " + distancia + " metros e percorreu " + runned);
         return distancia;
     }
 
@@ -41,7 +46,6 @@ public class RabbitThread extends Thread {
         }
 
         podium.add(this);
-
 
         if (RabbitThread.podium.size() == 5) {
             RabbitThread.showPodium();
