@@ -1,1 +1,1 @@
-Repositório para as atividades da classe de Software Concorrente e Distribuído
+Repository for the activities of the Concurrent and Distributed Software class
